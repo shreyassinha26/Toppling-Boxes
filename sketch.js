@@ -20,6 +20,7 @@ var index;
 
 function setup() {
   createCanvas(1600,600);
+  //createCanvas(2600,1600);
   engine = Engine.create();
   world = engine.world;
   hexagon = new Polygon(200 , 300 ,6, 30);
@@ -31,13 +32,13 @@ function setup() {
   index = 0;
   for(var i = 0;i<3;i++){
     for(var j = 0-i;j<=i;j++){
-      boxArray[index] = new Box(1400 + (25*j) , 225 + (50*i));
+      boxArray[index] = new Box(1400 + (25*j) , 250 + (50*i));
       index++;
     }
   }
   for(var i = 0;i<7;i++){
     for(var j = 0-i;j<=i;j++){
-      boxArray[index] = new Box(1000 + (25*j) , 250 + (50*i));
+      boxArray[index] = new Box(1000 + (25*j) , 240 + (50*i));
       index++;
     }
   }
