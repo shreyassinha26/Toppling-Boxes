@@ -9,7 +9,7 @@ class Polygon{
         
 
         this.body = Bodies.polygon(x , y, sides , radius , options);
-        
+        this.image = loadImage("hexagonal-diamond.png" );
         this.radius = radius;
         Matter.Body.setStatic(this.body , true);
          World.add(world , this.body);
@@ -20,10 +20,8 @@ class Polygon{
         push();
         translate(pos.x , pos.y);
         rotate(this.body.angle);
-        rectMode(CENTER);
-        fill("black");
-        strokeWeight(0);
-        circle( 0 , 0 , this.radius*2 ,  this.radius*2);
+        imageMode(CENTER);
+        image(this.image , 0 , 0 , this.radius*2 ,  this.radius*2);
         pop();
     }
 }

@@ -22,8 +22,8 @@ function setup() {
   createCanvas(1600,600);
   engine = Engine.create();
   world = engine.world;
-  hexagon = new Polygon(200 , 500 ,6, 30);
-  launcher = new Slingshot(hexagon.body , {x:300 , y:500});
+  hexagon = new Polygon(200 , 300 ,6, 30);
+  launcher = new Slingshot(hexagon.body , {x:300 , y:300});
   ground1 = new Ground(800 , 595 , 1600 , 10);
   ground2 = new Ground(1000 , 585 , 325 , 10);
   ground3 = new Ground(1400 , 405 , 125 , 10);
@@ -49,7 +49,7 @@ function setup() {
 
 
 function draw() {
-  background("skyBlue"); 
+  background(0 , 200 , 240); 
   Engine.update(engine); 
   angleMode(RADIANS);
   hexagon.display();
@@ -79,7 +79,7 @@ function mouseReleased(){
 }
 function keyPressed() {
   if(keyCode == 32){
-    Matter.Body.setPosition(hexagon.body , {x:200 , y:  500});
+    Matter.Body.setPosition(hexagon.body , {x:200 , y:  300});
     Matter.Body.setStatic(hexagon.body , true);
     launcher.setA(hexagon.body);
     //launcher.chain.bodyA = hexagon.Body;
